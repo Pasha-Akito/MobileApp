@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>rock</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+    <ion-title>My top rock songs to listen to this week</ion-title>
+  </ion-toolbar>
+  </ion-header>
+    <!--4 images of bands and albums to do with the genre. repeated on each page where a genre is-->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Jimi_Hendrix_1967.png/220px-Jimi_Hendrix_1967.png"height="300" width="320"(dblclick)=show()>
+  <img src="https://townsquare.media/site/295/files/2014/03/Queen-II1.jpg?w=980&q=75"height="300" width="300"(dblclick)=show()>
+  <img src="https://static.billboard.com/files/media/acdc-back-in-black-album-cover-650-compressed.jpg"height="300" width="315"(dblclick)=show()>
+  <img src="https://www.xsnoize.com/wp-content/uploads/2019/11/guns-n-roses-gnr-appetite-for-destruction-99434e5a-66e8-4cb1-a704-7161ee4ab578-1200x900.jpg"height="300" width="315"(dblclick)=show()>
+<!--clicking the button will reveal a fun fact about the genre. Data binding in action-->
+  <br>
+  <ion-button (click)=show()>Click for a fun fact!</ion-button>
+<br>
+<ion-grid [hidden]="hidden">
+  <ion-row>
+    <ion-col>
+      <ion-text class="bold"  >
+        Rock Fun Fact:
+      </ion-text>
+      
+    </ion-col>
+    <ion-col>
+      <ion-text class="bold"  >The song “Purple Haze” was written by Jimi Hendrix after he had a dream about walking underwater. 
+      </ion-text>
+      </ion-col>
+  </ion-row>
+      <!--displaying list of top songs to listen to-->
+</ion-grid>
+    <ion-list *ngFor="let r of rockData">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1"> 
+            {{r.key}}.
+          </ion-col>
+          <ion-col size="4">
+            {{r.Band}}
+          </ion-col>
+          <ion-col size="7">
+            {{r.Song}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <br>
+            <!--more databinding, user clicks to see the album of the week-->
+    <ion-button (click)=show()>Click to reveal the album of the week!</ion-button>
+    <ion-grid [hidden]="hidden">
+      <ion-row>
+        <ion-col>
+          <ion-text class="bold"  >
+            Ten by Pearl Jam
+          </ion-text>
+        </ion-col>
+   <ion-col>
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/PearlJam-Ten2.jpg"height="300" width="320"(dblclick)=show()>
+   </ion-col>
+      </ion-row>
+      </ion-grid>
+
+  <br>
+</ion-content>

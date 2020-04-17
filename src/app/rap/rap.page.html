@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rap</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+    <ion-title>My top Rap songs to listen to this week</ion-title>
+  </ion-toolbar>
+  </ion-header>
+    <!--4 images of bands and albums to do with the genre. repeated on each page where a genre is-->
+  <img src="https://static.billboard.com/files/media/01-kendrick-lamar-damn-album-art-2017-billboard-1240-1024x1024.jpg"height="300" width="320"(dblclick)=show()>
+  <img src="https://d279m997dpfwgl.cloudfront.net/wp/2018/12/AstroWorldTravisScott.jpg"height="300" width="310"(dblclick)=show()>
+  <img src="https://upload.wikimedia.org/wikipedia/en/8/84/StraightOuttaComptonN.W.A..jpg"height="300" width="315"(dblclick)=show()>
+  <img src="https://i.pinimg.com/originals/9c/eb/33/9ceb33a55f7990c520d528a83cee05ec.jpg"height="300" width="315"(dblclick)=show()>
+<!--clicking the button will reveal a fun fact about the genre. Data binding in action-->
+  <br>
+  <ion-button (click)=show()>Click for a fun fact!</ion-button>
+<br>
+<ion-grid [hidden]="hidden">
+  <ion-row>
+    <ion-col>
+      <ion-text class="bold"  >
+        Rap Fun Fact:
+      </ion-text>
+      
+    </ion-col>
+    <ion-col>
+      <ion-text class="bold"  >
+        RAP stands for rhythm and poetry.
+      </ion-text>
+      </ion-col>
+  </ion-row>
+    <!--displaying list of top songs to listen to-->
+</ion-grid>
+    <ion-list *ngFor="let r of rapData">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1"> 
+            {{r.key}}.
+          </ion-col>
+          <ion-col size="4">
+            {{r.Band}}
+          </ion-col>
+          <ion-col size="7">
+            {{r.Song}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <br>
+        <!--more databinding, user clicks to see the album of the week-->
+    <ion-button (click)=show()>Click to reveal the album of the week!</ion-button>
+    <ion-grid [hidden]="hidden">
+      <ion-row>
+        <ion-col>
+          <ion-text class="bold"  >
+            Life of Pablo by Kanye West
+          </ion-text>
+        </ion-col>
+   <ion-col>
+    <img src="https://djbooth.net/.image/t_share/MTUzNDg1OTU3NjU2OTQ1ODYy/the-life-of-pauljpeg.jpg"height="300" width="500"(dblclick)=show()>
+   </ion-col>
+      </ion-row>
+      </ion-grid>
+
+  <br>
+   
+</ion-content>

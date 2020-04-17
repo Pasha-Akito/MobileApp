@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Welcome, please select an option</ion-title>
+  </ion-toolbar>
+ </ion-header>
+ <br>
+ <br>
+ <ion-label class="bold">
+   You can select from rock, metal or rap, you can also check out our settings page!
+ </ion-label>
+ <br>
+
+ <ion-content padding>
+  <img src="https://media.idownloadblog.com/wp-content/uploads/2018/03/Apple-Music-icon-002.jpg"height="250" width="640"(dblclick)=show()>
+  <img src="https://ak.picdn.net/assets/cms/music_subscription_homepage_banner.jpg"height="250" width="640"(dblclick)=show()>
+  <!--grid layout to appeal to the user. Button navigates to new page-->
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" size="large" routerLink="/rock" routerDirection="forward">
+        Rock
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" size="large" routerLink="/metal" routerDirection="forward">
+        Metal
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" size="large" routerLink="/rap" routerDirection="forward">
+        Rap
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" size="large" routerLink="/other" routerDirection="forward">
+        Other/Settings
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!--storing the users favourite genre-->
+<ion-title>Your Favourite music: {{myMusic}}</ion-title><ion-button routerLink="/other" routerDirection="forward">Update Status</ion-button></ion-content>

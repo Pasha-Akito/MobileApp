@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Metal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+    <ion-title>My top Metal songs to listen to this week</ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <!--4 images of bands and albums to do with the genre. repeated on each page where a genre is-->
+  <img src="https://db575vekeqyte.cloudfront.net/images/cover.jpg"height="300" width="320"(dblclick)=show()>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQtATt3UtX1dbUhwUQuVOhNK-XjXbJwvsTjPAPcQ7FyQ-3wXDRU&usqp=CAU"height="300" width="300"(dblclick)=show()>
+  <img src="https://cutewallpaper.org/21/tool-band-wallpaper/tool-logo-wallpaper-Tumblr.jpg"height="300" width="315"(dblclick)=show()>
+  <img src="https://i.ytimg.com/vi/3POFA88lZo8/maxresdefault.jpg"height="300" width="315"(dblclick)=show()>
+<!--clicking the button will reveal a fun fact about the genre. Data binding in action-->
+  <br>
+  <ion-button (click)=show()>Click for a fun fact!</ion-button>
+<br>
+<ion-grid [hidden]="hidden">
+  <ion-row>
+    <ion-col>
+      <ion-text class="bold"  >
+        Metal Fun Fact:
+      </ion-text>
+      
+    </ion-col>
+    <ion-col>
+      <ion-text class="bold"  >
+        The Big Bang was quieter than a Motörhead concert.
+      </ion-text>
+      </ion-col>
+  </ion-row>
+  <!--displaying list of top songs to listen to-->
+</ion-grid>
+    <ion-list *ngFor="let r of metalData">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1"> 
+            {{r.key}}
+          </ion-col>
+          <ion-col size="4">
+            {{r.Band}}
+          </ion-col>
+          <ion-col size="7">
+            {{r.Song}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <br>
+    <!--more databinding, user clicks to see the album of the week-->
+    <ion-button (click)=show()>Click to reveal the album of the week!</ion-button>
+    <ion-grid [hidden]="hidden">
+      <ion-row>
+        <ion-col>
+          <ion-text class="bold"  >
+            Laterus by Tool
+          </ion-text>
+        </ion-col>
+   <ion-col>
+    <img src="https://www.revolvermag.com/sites/default/files/media/images/article/lateralus_art.jpg"height="300" width="500"(dblclick)=show()>
+   </ion-col>
+      </ion-row>
+      </ion-grid>
+
+  <br>
+</ion-content>

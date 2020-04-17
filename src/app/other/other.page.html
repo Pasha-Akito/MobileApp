@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Click the official charts button to view the charts for that genre</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--in app browser plugin. Links to charts of the genres-->
+<ion-content>
+  <ion-button expand="block" size="large"(click)="openBlank()">The official Rock and Metal Charts</ion-button>
+  <br>
+  <ion-button expand="block" size="large"(click)="openBlank1()">The official Urban/Rap Charts</ion-button>
+  <br>
+  <!--select from the fav genres here and saved in storage-->
+  <ion-title>Current favourite genre is {{myMusic}}</ion-title>
+  <ion-list><ion-radio-group [(ngModel)]="myMusic"><ion-item>
+    <ion-label>Rock</ion-label><ion-radio value="Rock">
+
+    </ion-radio>
+  </ion-item>
+  <ion-item><ion-label>Metal</ion-label>
+    <ion-radio value="Metal" ></ion-radio></ion-item>
+    <ion-item><ion-label>Rap</ion-label><ion-radio value="Rap" ></ion-radio>
+    </ion-item></ion-radio-group>
+  </ion-list><ion-button (click)="saveStatus()">Save</ion-button></ion-content>
+
